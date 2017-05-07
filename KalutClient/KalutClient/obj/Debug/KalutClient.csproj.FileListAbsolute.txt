@@ -1,1 +1,11 @@
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\KalutClient.exe.config
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\KalutClient.exe
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\KalutClient.pdb
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\MetroFramework.dll
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.csprojResolveAssemblyReference.cache
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.Form1.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.Properties.Resources.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.csproj.GenerateResource.Cache
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.exe
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.pdb
