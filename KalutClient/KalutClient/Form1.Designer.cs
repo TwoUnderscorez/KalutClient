@@ -32,6 +32,7 @@
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -80,11 +81,24 @@
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
             // 
+            // metroLink1
+            // 
+            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink1.Location = new System.Drawing.Point(97, 60);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(176, 19);
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLink1.TabIndex = 5;
+            this.metroLink1.Text = "Log in";
+            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroLink1.UseStyleColors = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 323);
+            this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroLabel1);
@@ -107,6 +121,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile4;
+        private MetroFramework.Controls.MetroLink metroLink1;
     }
 }
 
