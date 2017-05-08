@@ -1,6 +1,6 @@
 ﻿namespace KalutClient
 {
-    partial class Form1
+    partial class WelcomeScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
             // 
             // metroLabel1
@@ -43,6 +43,19 @@
             this.metroLabel1.Size = new System.Drawing.Size(68, 19);
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "I want to...";
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroLink1.Location = new System.Drawing.Point(97, 60);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(176, 19);
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLink1.TabIndex = 5;
+            this.metroLink1.Text = "Log in";
+            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.metroLink1.UseStyleColors = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroTile4
             // 
@@ -69,6 +82,7 @@
             this.metroTile2.TileImage = global::KalutClient.Properties.Resources.rsz_notepad;
             this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.UseTileImage = true;
+            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
             // metroTile1
             // 
@@ -80,20 +94,9 @@
             this.metroTile1.TileImage = global::KalutClient.Properties.Resources.rsz_player_copy;
             this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile1.UseTileImage = true;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
             // 
-            // metroLink1
-            // 
-            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink1.Location = new System.Drawing.Point(97, 60);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(176, 19);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLink1.TabIndex = 5;
-            this.metroLink1.Text = "Log in";
-            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroLink1.UseStyleColors = true;
-            // 
-            // Form1
+            // WelcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,8 +110,10 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(296, 323);
             this.MinimumSize = new System.Drawing.Size(296, 323);
-            this.Name = "Form1";
-            this.Text = "Welcome to Kalut!";
+            this.Name = "WelcomeScreen";
+            this.Resizable = false;
+            this.Text = " Welcome to Kalut!";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WelcomeScreen_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
