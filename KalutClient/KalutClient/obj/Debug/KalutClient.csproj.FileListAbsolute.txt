@@ -11,3 +11,9 @@ C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutC
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.WelcomeScreen.resources
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.QuizMakerForm.resources
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.QuizSelectionForm.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.csprojResolveAssemblyReference.cache
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\Communicator.dll
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\Communicator.pdb
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.PleaseWait.resources

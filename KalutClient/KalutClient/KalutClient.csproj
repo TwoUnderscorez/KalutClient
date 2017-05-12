@@ -64,6 +64,12 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PleaseWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PleaseWait.Designer.cs">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuizMakerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PleaseWait.resx">
+      <DependentUpon>PleaseWait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuizMakerForm.resx">
       <DependentUpon>QuizMakerForm.cs</DependentUpon>
@@ -129,6 +138,12 @@
     <None Include="Resources\plus-512.png" />
     <None Include="Resources\player copy.png" />
     <None Include="Resources\Notepad copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Communicator\Communicator.csproj">
+      <Project>{8AA701A1-FA24-4AF7-AF0A-5AE9ADBC25A9}</Project>
+      <Name>Communicator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

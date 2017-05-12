@@ -47,6 +47,7 @@
             this.login_btn.Style = MetroFramework.MetroColorStyle.Blue;
             this.login_btn.TabIndex = 0;
             this.login_btn.Text = "Log in";
+            this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
             // close_btn
             // 

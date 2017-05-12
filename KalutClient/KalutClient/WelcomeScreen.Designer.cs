@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.login_lnk = new MetroFramework.Controls.MetroLink();
+            this.srv_sts_lnk = new MetroFramework.Controls.MetroLink();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
@@ -44,18 +45,30 @@
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "I want to...";
             // 
-            // metroLink1
+            // login_lnk
             // 
-            this.metroLink1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLink1.Location = new System.Drawing.Point(97, 60);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(176, 19);
-            this.metroLink1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLink1.TabIndex = 5;
-            this.metroLink1.Text = "Log in";
-            this.metroLink1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroLink1.UseStyleColors = true;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            this.login_lnk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.login_lnk.Location = new System.Drawing.Point(97, 60);
+            this.login_lnk.Name = "login_lnk";
+            this.login_lnk.Size = new System.Drawing.Size(176, 19);
+            this.login_lnk.Style = MetroFramework.MetroColorStyle.Blue;
+            this.login_lnk.TabIndex = 5;
+            this.login_lnk.Text = "Log in";
+            this.login_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.login_lnk.UseStyleColors = true;
+            this.login_lnk.Click += new System.EventHandler(this.metroLink1_Click);
+            // 
+            // srv_sts_lnk
+            // 
+            this.srv_sts_lnk.Location = new System.Drawing.Point(1, 301);
+            this.srv_sts_lnk.Name = "srv_sts_lnk";
+            this.srv_sts_lnk.Size = new System.Drawing.Size(293, 23);
+            this.srv_sts_lnk.Style = MetroFramework.MetroColorStyle.Blue;
+            this.srv_sts_lnk.TabIndex = 6;
+            this.srv_sts_lnk.Text = "Check service status";
+            this.srv_sts_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.srv_sts_lnk.UseStyleColors = true;
+            this.srv_sts_lnk.Click += new System.EventHandler(this.srv_sts_lnk_Click);
             // 
             // metroTile4
             // 
@@ -71,6 +84,7 @@
             this.metroTile4.TileImage = global::KalutClient.Properties.Resources.rsz_1rsz_plus_512;
             this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile4.UseTileImage = true;
+            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
             // 
             // metroTile2
             // 
@@ -101,7 +115,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(296, 323);
-            this.Controls.Add(this.metroLink1);
+            this.Controls.Add(this.srv_sts_lnk);
+            this.Controls.Add(this.login_lnk);
             this.Controls.Add(this.metroTile4);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroLabel1);
@@ -126,7 +141,8 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTile metroTile2;
         private MetroFramework.Controls.MetroTile metroTile4;
-        private MetroFramework.Controls.MetroLink metroLink1;
+        private MetroFramework.Controls.MetroLink login_lnk;
+        private MetroFramework.Controls.MetroLink srv_sts_lnk;
     }
 }
 
