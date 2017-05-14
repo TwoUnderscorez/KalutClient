@@ -90,9 +90,9 @@ namespace KalutClient
             Environment.Exit(0x0);
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        async private void metroTile4_Click(object sender, EventArgs e)
         {
-
+            StandartResponse rsp = await Communicator.Communicator.GET("/");
         }
 
         private void srv_sts_lnk_Click(object sender, EventArgs e)

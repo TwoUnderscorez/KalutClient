@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Net;
 using Newtonsoft.Json;
 
+
+
 namespace Communicator
 {
     public class Communicator
