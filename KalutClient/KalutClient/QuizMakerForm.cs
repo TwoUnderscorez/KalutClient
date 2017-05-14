@@ -27,8 +27,8 @@ namespace KalutClient
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Hide();
             parent.Show();
+            Hide();
         }
 
         private void QuizMakerForm_FormClosing(object sender, FormClosingEventArgs e)

@@ -55,7 +55,48 @@ namespace Communicator
             data.Add("Username", Username);
             data.Add("Password", Password);
             StandartResponse rsp = await POST("/auth", data);
-            return rsp.Data["Auth"]=="True";
+            return rsp.Data["Auth"].ToString() == "True";
+        }
+        async private static Task<Dictionary<string, string>> GetQuizDescByUID(int uid)
+        {
+            StandartResponse rsp = await GET(string.Format("/quizes/get_quiz_info_by_uid&{0}", uid));
+            return rsp.Data;
+        }
+        async public static Task<Dictionary<int, Dictionary<string, string>>> GetUserKalutsInfo(string Username, string Password)
+        {
+            var pdata = new Dictionary<string, string>();
+            pdata.Add("Username", Username);
+            pdata.Add("Password", Password);
+            StandartResponse rsp = await POST("/quizes/get_user_kaluts_info", pdata);
+            var retdata = new Dictionary<int, Dictionary<string, string>>();
+            foreach (string uid in rsp.Data.Keys)
+            {
+                retdata.Add(int.Parse(uid), JsonConvert.DeserializeObject<Dictionary<string, string>>(rsp.Data[uid]));
+            }
+            return retdata;
+        }
+        async public static Task<Dictionary<int, Dictionary<string, string>>> GetUserFavKalutsInfo(string Username, string Password)
+        {
+            var pdata = new Dictionary<string, string>();
+            pdata.Add("Username", Username);
+            pdata.Add("Password", Password);
+            StandartResponse rsp = await POST("/quizes/get_user_fav_kaluts_info", pdata);
+            var retdata = new Dictionary<int, Dictionary<string, string>>();
+            foreach (string uid in rsp.Data.Keys)
+            {
+                retdata.Add(int.Parse(uid), JsonConvert.DeserializeObject<Dictionary<string, string>>(rsp.Data[uid]));
+            }
+            return retdata;
+        }
+        async public static Task<Dictionary<int, Dictionary<string, string>>> GetAllKalutInfo()
+        {
+            StandartResponse rsp = await GET("/quizes/get_all_quizes_info");
+            var retdata = new Dictionary<int, Dictionary<string, string>>();
+            foreach (string uid in rsp.Data.Keys)
+            {
+                retdata.Add(int.Parse(uid), JsonConvert.DeserializeObject<Dictionary<string, string>>(rsp.Data[uid]));
+            }
+            return retdata;
         }
     }
 }

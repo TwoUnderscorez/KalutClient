@@ -16,6 +16,13 @@ namespace KalutClient
     {
         QuizMakerForm qmaker;
         QuizSelectionForm qselector;
+        public static bool LoggedIn
+        {
+            get
+            {
+                return !string.IsNullOrEmpty(Properties.Settings.Default.Username) && !string.IsNullOrEmpty(Properties.Settings.Default.Password);
+            }
+        }
         public WelcomeScreen()
         {
             InitializeComponent();
@@ -50,14 +57,32 @@ namespace KalutClient
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            Hide();
-            qselector.Show();
+            if (LoggedIn)
+            {
+                Hide();
+                qselector = new QuizSelectionForm(this);
+                qselector.Show();
+            }
+            else
+            {
+                MessageBox.Show("You must be logged in to open that window.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            Hide();
-            qmaker.Show();
+            if (LoggedIn)
+            {
+                Hide();
+                qmaker = new QuizMakerForm(this);
+                qmaker.Show();
+            }
+            else
+            {
+                MessageBox.Show("You must be logged in to open that window.", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void WelcomeScreen_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,7 +113,7 @@ namespace KalutClient
                     srv_sts_lnk.Text = "Seems like our server are down... :(";
                     srv_sts_lnk.Style = MetroFramework.MetroColorStyle.Red;
                 }
-                else if (t.Result.Data["Service Status"] == "OK")
+                else if (t.Result.Data["Service Status"].ToString() == "OK")
                 {
                     srv_sts_lnk.Text = "Service is operating normally.";
                     srv_sts_lnk.Style = MetroFramework.MetroColorStyle.Green;

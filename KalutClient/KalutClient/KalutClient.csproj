@@ -64,6 +64,7 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Objects\KalutInfo.cs" />
     <Compile Include="PleaseWait.cs">
       <SubType>Form</SubType>
     </Compile>

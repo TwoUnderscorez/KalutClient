@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
+using MetroFramework.Fonts;
 
 namespace KalutClient
 {
@@ -22,7 +23,7 @@ namespace KalutClient
 
         private void PleaseWait_Load(object sender, EventArgs e)
         {
-            metroLabel1.Text = msg;
+            metroTextBox1.Text = msg;
         }
     }
 }

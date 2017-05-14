@@ -114,7 +114,7 @@
             this.fpwd_lnk.Size = new System.Drawing.Size(223, 16);
             this.fpwd_lnk.Style = MetroFramework.MetroColorStyle.Blue;
             this.fpwd_lnk.TabIndex = 7;
-            this.fpwd_lnk.Text = "Forgot you password?";
+            this.fpwd_lnk.Text = "Forgot your password?";
             this.fpwd_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.fpwd_lnk.UseStyleColors = true;
             this.fpwd_lnk.Click += new System.EventHandler(this.fpwd_lnk_Click);

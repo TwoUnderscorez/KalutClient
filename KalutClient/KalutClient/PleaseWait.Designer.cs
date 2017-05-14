@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.metroProgressSpinner1 = new MetroFramework.Controls.MetroProgressSpinner();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
             // 
             // metroProgressSpinner1
@@ -42,15 +42,19 @@
             this.metroProgressSpinner1.TabIndex = 0;
             this.metroProgressSpinner1.UseWaitCursor = true;
             // 
-            // metroLabel1
+            // metroTextBox1
             // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(23, 63);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(81, 19);
-            this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "metroLabel1";
-            this.metroLabel1.UseWaitCursor = true;
+            this.metroTextBox1.CustomBackground = true;
+            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.metroTextBox1.Location = new System.Drawing.Point(23, 54);
+            this.metroTextBox1.Multiline = true;
+            this.metroTextBox1.Name = "metroTextBox1";
+            this.metroTextBox1.ReadOnly = true;
+            this.metroTextBox1.Size = new System.Drawing.Size(255, 57);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.White;
+            this.metroTextBox1.TabIndex = 2;
+            this.metroTextBox1.Text = "metroTextBox1";
+            this.metroTextBox1.UseStyleColors = true;
             // 
             // PleaseWait
             // 
@@ -58,7 +62,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 114);
             this.ControlBox = false;
-            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroProgressSpinner1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -70,13 +74,12 @@
             this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.PleaseWait_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private MetroFramework.Controls.MetroProgressSpinner metroProgressSpinner1;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroTextBox metroTextBox1;
     }
 }
