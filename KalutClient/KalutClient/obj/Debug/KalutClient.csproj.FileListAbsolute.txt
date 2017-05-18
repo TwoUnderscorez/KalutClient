@@ -17,3 +17,4 @@ C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutC
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.csproj.GenerateResource.Cache
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.exe
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.pdb
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.QuizEditor.resources

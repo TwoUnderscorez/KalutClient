@@ -100,5 +100,15 @@ namespace Communicator
             }
             return retdata;
         }
+        async public static Task<StandartResponse> AddKalut(string Username, string Password, string Info, string Quetions)
+        {
+            var data = new Dictionary<string, string>();
+            data.Add("Username", Username);
+            data.Add("Password", Password);
+            data.Add("QuizData", Quetions);
+            data.Add("QuizDescription", Info);
+            StandartResponse rsp = await POST("/quizes/add", data);
+            return rsp;
+        }
     }
 }
