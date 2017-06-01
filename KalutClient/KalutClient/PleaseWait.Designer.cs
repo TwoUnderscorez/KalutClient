@@ -55,6 +55,7 @@
             this.metroTextBox1.TabIndex = 2;
             this.metroTextBox1.Text = "metroTextBox1";
             this.metroTextBox1.UseStyleColors = true;
+            this.metroTextBox1.UseWaitCursor = true;
             // 
             // PleaseWait
             // 

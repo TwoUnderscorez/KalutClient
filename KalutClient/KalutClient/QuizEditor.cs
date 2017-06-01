@@ -224,7 +224,6 @@ namespace KalutClient
                 ((KalutQuestion)qs_lstbox.SelectedItem).Time = (int)q_time_adjust.Value;
             }
             catch { }
-            
         }
 
         private void save_quiz_btn_Click(object sender, EventArgs e)

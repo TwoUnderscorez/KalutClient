@@ -63,6 +63,36 @@ namespace KalutClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ironpython_logo {
+            get {
+                object obj = ResourceManager.GetObject("ironpython-logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_qimg_133cb67a060cbb79455b67bd45a6ea6a {
+            get {
+                object obj = ResourceManager.GetObject("main-qimg-133cb67a060cbb79455b67bd45a6ea6a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap planq_logo1 {
+            get {
+                object obj = ResourceManager.GetObject("planq_logo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap rsz_1rsz_plus_512 {
             get {
                 object obj = ResourceManager.GetObject("rsz_1rsz_plus_512", resourceCulture);

@@ -53,7 +53,7 @@
             this.save_quiz_btn = new MetroFramework.Controls.MetroButton();
             this.delete_q_btn = new MetroFramework.Controls.MetroButton();
             this.add_q_btn = new MetroFramework.Controls.MetroButton();
-            this.qs_lstbox = new KalutClient.RefreshListBox();
+            this.qs_lstbox = new System.Windows.Forms.ListBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.quiz_desc_txt = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -465,7 +465,7 @@
         private MetroFramework.Controls.MetroButton save_quiz_btn;
         private MetroFramework.Controls.MetroButton delete_q_btn;
         private MetroFramework.Controls.MetroButton add_q_btn;
-        private KalutClient.RefreshListBox qs_lstbox;
+        private System.Windows.Forms.ListBox qs_lstbox;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox quiz_desc_txt;
         private MetroFramework.Controls.MetroLabel metroLabel1;

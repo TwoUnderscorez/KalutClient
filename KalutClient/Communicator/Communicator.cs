@@ -110,5 +110,10 @@ namespace Communicator
             StandartResponse rsp = await POST("/quizes/add", data);
             return rsp;
         }
+        async public static Task<Dictionary<string, string>> CreateRoom(int uid)
+        {
+            StandartResponse rsp = await GET(string.Format("/rooms/create_room&{0}", uid));
+            return rsp.Data;
+        }
     }
 }

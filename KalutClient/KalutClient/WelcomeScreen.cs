@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Communicator;
+using IronPython.Hosting;
 
 namespace KalutClient
 { 
@@ -92,7 +93,9 @@ namespace KalutClient
 
         async private void metroTile4_Click(object sender, EventArgs e)
         {
-            StandartResponse rsp = await Communicator.Communicator.GET("/");
+            PlayerViewHost player = new PlayerViewHost();
+            Hide();
+            player.Show();
         }
 
         private void srv_sts_lnk_Click(object sender, EventArgs e)

@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MetroFramework.Controls;
-using KalutClient.Objects;
-using Communicator;
-using Newtonsoft.Json;
+using MetroFramework.Forms;
 
 namespace KalutClient
 {
-    class RefreshListBox : ListBox
+    public partial class About : MetroForm
     {
-        public void RefreshItemsText()
+        public About()
         {
-            base.RefreshItems();
+            InitializeComponent();
+        }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

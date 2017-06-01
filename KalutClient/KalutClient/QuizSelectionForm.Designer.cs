@@ -36,26 +36,26 @@
             this.my_title_lbl = new MetroFramework.Controls.MetroLabel();
             this.my_kaluts_lst = new System.Windows.Forms.ListBox();
             this.onlineQuizes_tab = new MetroFramework.Controls.MetroTabPage();
-            this.favQuiz_tab = new MetroFramework.Controls.MetroTabPage();
-            this.back_btn = new MetroFramework.Controls.MetroButton();
-            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.all_kaluts_lst = new System.Windows.Forms.ListBox();
             this.all_desk_lbl = new MetroFramework.Controls.MetroLabel();
             this.all_name_lbl = new MetroFramework.Controls.MetroLabel();
-            this.myfav_kaluts_lst = new System.Windows.Forms.ListBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.all_kaluts_lst = new System.Windows.Forms.ListBox();
+            this.favQuiz_tab = new MetroFramework.Controls.MetroTabPage();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.myfav_desc_lbl = new MetroFramework.Controls.MetroLabel();
             this.myfav_name_lbl = new MetroFramework.Controls.MetroLabel();
             this.metroButton2 = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.myfav_kaluts_lst = new System.Windows.Forms.ListBox();
+            this.back_btn = new MetroFramework.Controls.MetroButton();
             this.metroTabControl1.SuspendLayout();
             this.myQuizes_tab.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             this.onlineQuizes_tab.SuspendLayout();
-            this.favQuiz_tab.SuspendLayout();
             this.metroPanel2.SuspendLayout();
+            this.favQuiz_tab.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,6 +114,7 @@
             this.my_start_kalut_btn.Style = MetroFramework.MetroColorStyle.Blue;
             this.my_start_kalut_btn.TabIndex = 4;
             this.my_start_kalut_btn.Text = "Start!";
+            this.my_start_kalut_btn.Click += new System.EventHandler(this.my_start_kalut_btn_Click);
             // 
             // my_desc_lbl
             // 
@@ -158,42 +159,6 @@
             this.onlineQuizes_tab.Text = "Kaluts Made by Other People";
             this.onlineQuizes_tab.VerticalScrollbarBarColor = true;
             // 
-            // favQuiz_tab
-            // 
-            this.favQuiz_tab.Controls.Add(this.metroPanel3);
-            this.favQuiz_tab.Controls.Add(this.myfav_kaluts_lst);
-            this.favQuiz_tab.HorizontalScrollbarBarColor = true;
-            this.favQuiz_tab.Location = new System.Drawing.Point(4, 35);
-            this.favQuiz_tab.Name = "favQuiz_tab";
-            this.favQuiz_tab.Size = new System.Drawing.Size(689, 368);
-            this.favQuiz_tab.TabIndex = 2;
-            this.favQuiz_tab.Text = "My Favorite Kaluts";
-            this.favQuiz_tab.VerticalScrollbarBarColor = true;
-            // 
-            // back_btn
-            // 
-            this.back_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.back_btn.Highlight = true;
-            this.back_btn.Location = new System.Drawing.Point(643, 25);
-            this.back_btn.Name = "back_btn";
-            this.back_btn.Size = new System.Drawing.Size(73, 23);
-            this.back_btn.Style = MetroFramework.MetroColorStyle.Blue;
-            this.back_btn.TabIndex = 2;
-            this.back_btn.Text = "Back";
-            this.back_btn.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
-            // 
-            // metroButton1
-            // 
-            this.metroButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.metroButton1.Highlight = true;
-            this.metroButton1.Location = new System.Drawing.Point(4, 342);
-            this.metroButton1.Name = "metroButton1";
-            this.metroButton1.Size = new System.Drawing.Size(230, 23);
-            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroButton1.TabIndex = 4;
-            this.metroButton1.Text = "Start!";
-            // 
             // metroPanel2
             // 
             this.metroPanel2.Controls.Add(this.all_desk_lbl);
@@ -211,6 +176,36 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // all_desk_lbl
+            // 
+            this.all_desk_lbl.AutoSize = true;
+            this.all_desk_lbl.Location = new System.Drawing.Point(6, 29);
+            this.all_desk_lbl.Name = "all_desk_lbl";
+            this.all_desk_lbl.Size = new System.Drawing.Size(74, 19);
+            this.all_desk_lbl.TabIndex = 6;
+            this.all_desk_lbl.Text = "Description";
+            // 
+            // all_name_lbl
+            // 
+            this.all_name_lbl.AutoSize = true;
+            this.all_name_lbl.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.all_name_lbl.Location = new System.Drawing.Point(6, 4);
+            this.all_name_lbl.Name = "all_name_lbl";
+            this.all_name_lbl.Size = new System.Drawing.Size(58, 25);
+            this.all_name_lbl.TabIndex = 5;
+            this.all_name_lbl.Text = "Name";
+            // 
+            // metroButton1
+            // 
+            this.metroButton1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.metroButton1.Highlight = true;
+            this.metroButton1.Location = new System.Drawing.Point(4, 342);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(230, 23);
+            this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroButton1.TabIndex = 4;
+            this.metroButton1.Text = "Start!";
             // 
             // metroLabel1
             // 
@@ -232,36 +227,17 @@
             this.all_kaluts_lst.TabIndex = 4;
             this.all_kaluts_lst.SelectedIndexChanged += new System.EventHandler(this.all_kaluts_lst_SelectedIndexChanged);
             // 
-            // all_desk_lbl
+            // favQuiz_tab
             // 
-            this.all_desk_lbl.AutoSize = true;
-            this.all_desk_lbl.Location = new System.Drawing.Point(6, 29);
-            this.all_desk_lbl.Name = "all_desk_lbl";
-            this.all_desk_lbl.Size = new System.Drawing.Size(74, 19);
-            this.all_desk_lbl.TabIndex = 6;
-            this.all_desk_lbl.Text = "Description";
-            // 
-            // all_name_lbl
-            // 
-            this.all_name_lbl.AutoSize = true;
-            this.all_name_lbl.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.all_name_lbl.Location = new System.Drawing.Point(6, 4);
-            this.all_name_lbl.Name = "all_name_lbl";
-            this.all_name_lbl.Size = new System.Drawing.Size(58, 25);
-            this.all_name_lbl.TabIndex = 5;
-            this.all_name_lbl.Text = "Name";
-            // 
-            // myfav_kaluts_lst
-            // 
-            this.myfav_kaluts_lst.Dock = System.Windows.Forms.DockStyle.Left;
-            this.myfav_kaluts_lst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.myfav_kaluts_lst.FormattingEnabled = true;
-            this.myfav_kaluts_lst.ItemHeight = 18;
-            this.myfav_kaluts_lst.Location = new System.Drawing.Point(0, 0);
-            this.myfav_kaluts_lst.Name = "myfav_kaluts_lst";
-            this.myfav_kaluts_lst.Size = new System.Drawing.Size(443, 368);
-            this.myfav_kaluts_lst.TabIndex = 5;
-            this.myfav_kaluts_lst.SelectedIndexChanged += new System.EventHandler(this.myfav_kaluts_lst_SelectedIndexChanged);
+            this.favQuiz_tab.Controls.Add(this.metroPanel3);
+            this.favQuiz_tab.Controls.Add(this.myfav_kaluts_lst);
+            this.favQuiz_tab.HorizontalScrollbarBarColor = true;
+            this.favQuiz_tab.Location = new System.Drawing.Point(4, 35);
+            this.favQuiz_tab.Name = "favQuiz_tab";
+            this.favQuiz_tab.Size = new System.Drawing.Size(689, 368);
+            this.favQuiz_tab.TabIndex = 2;
+            this.favQuiz_tab.Text = "My Favorite Kaluts";
+            this.favQuiz_tab.VerticalScrollbarBarColor = true;
             // 
             // metroPanel3
             // 
@@ -320,6 +296,31 @@
             this.metroLabel4.Size = new System.Drawing.Size(0, 0);
             this.metroLabel4.TabIndex = 3;
             // 
+            // myfav_kaluts_lst
+            // 
+            this.myfav_kaluts_lst.Dock = System.Windows.Forms.DockStyle.Left;
+            this.myfav_kaluts_lst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.myfav_kaluts_lst.FormattingEnabled = true;
+            this.myfav_kaluts_lst.ItemHeight = 18;
+            this.myfav_kaluts_lst.Location = new System.Drawing.Point(0, 0);
+            this.myfav_kaluts_lst.Name = "myfav_kaluts_lst";
+            this.myfav_kaluts_lst.Size = new System.Drawing.Size(443, 368);
+            this.myfav_kaluts_lst.TabIndex = 5;
+            this.myfav_kaluts_lst.SelectedIndexChanged += new System.EventHandler(this.myfav_kaluts_lst_SelectedIndexChanged);
+            // 
+            // back_btn
+            // 
+            this.back_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.back_btn.Highlight = true;
+            this.back_btn.Location = new System.Drawing.Point(643, 25);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(73, 23);
+            this.back_btn.Style = MetroFramework.MetroColorStyle.Blue;
+            this.back_btn.TabIndex = 2;
+            this.back_btn.Text = "Back";
+            this.back_btn.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // QuizSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,9 +341,9 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.onlineQuizes_tab.ResumeLayout(false);
-            this.favQuiz_tab.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
+            this.favQuiz_tab.ResumeLayout(false);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
             this.ResumeLayout(false);

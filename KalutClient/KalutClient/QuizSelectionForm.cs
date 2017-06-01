@@ -123,5 +123,13 @@ namespace KalutClient
                 all_name_lbl.Text = item.Name;
             }
         }
+
+        private void my_start_kalut_btn_Click(object sender, EventArgs e)
+        {
+            int uid = ((KalutInfo)my_kaluts_lst.SelectedItem).UID;
+            WallViewHost wallview = new WallViewHost(uid);
+            Hide();
+            wallview.Show();
+        }
     }
 }
