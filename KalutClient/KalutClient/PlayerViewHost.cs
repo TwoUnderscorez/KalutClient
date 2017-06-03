@@ -11,6 +11,8 @@ using MetroFramework.Forms;
 using IronPython.Hosting;
 using Microsoft.Scripting.Hosting;
 using Newtonsoft.Json;
+using KalutClient.Objects;
+using Communicator;
 
 namespace KalutClient
 {
@@ -19,6 +21,7 @@ namespace KalutClient
         JoinKalutView joinview;
         private int UID;
         private int PIN;
+        private KalutQuestion[] QuizData;
         private string name;
         ScriptRuntime IronPython;
         dynamic IronPythonScript;
@@ -54,6 +57,8 @@ namespace KalutClient
                 status_lbl.Text = "Connected!";
                 status_spn.Spinning = false;
                 status_spn.Value = 100;
+                LoadQuiz();
+                UID = int.Parse(data["UID"]);
             }
             else
             {
@@ -70,7 +75,16 @@ namespace KalutClient
             joinview.Dock = DockStyle.Fill;
             joinview.BringToFront();
         }
-
+        private async void LoadQuiz()
+        {
+            await Task.Delay(50);
+            var worker = Communicator.Communicator.GetQuizDataByUID(UID);
+            await worker.ContinueWith(t =>
+             {
+                 QuizData = JsonConvert.DeserializeObject<KalutQuestion[]>(t.Result["Quiz"]);
+             },
+            TaskScheduler.FromCurrentSynchronizationContext());
+        }
         private void DisplayJoinKalutView(bool display)
         {
             if (display)

@@ -69,7 +69,7 @@
             this.metroTabControl1.Controls.Add(this.favQuiz_tab);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.SelectedIndex = 1;
             this.metroTabControl1.Size = new System.Drawing.Size(697, 407);
             this.metroTabControl1.TabIndex = 0;
             // 
@@ -176,6 +176,7 @@
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
+            this.metroPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.metroPanel2_Paint);
             // 
             // all_desk_lbl
             // 
@@ -206,6 +207,7 @@
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroButton1.TabIndex = 4;
             this.metroButton1.Text = "Start!";
+            this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
             // metroLabel1
             // 
@@ -287,6 +289,7 @@
             this.metroButton2.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroButton2.TabIndex = 4;
             this.metroButton2.Text = "Start!";
+            this.metroButton2.Click += new System.EventHandler(this.metroButton2_Click);
             // 
             // metroLabel4
             // 

@@ -131,5 +131,26 @@ namespace KalutClient
             Hide();
             wallview.Show();
         }
+
+        private void metroPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            int uid = ((KalutInfo)all_kaluts_lst.SelectedItem).UID;
+            WallViewHost wallview = new WallViewHost(uid);
+            Hide();
+            wallview.Show();
+        }
+
+        private void metroButton2_Click(object sender, EventArgs e)
+        {
+            int uid = ((KalutInfo)myfav_kaluts_lst.SelectedItem).UID;
+            WallViewHost wallview = new WallViewHost(uid);
+            Hide();
+            wallview.Show();
+        }
     }
 }

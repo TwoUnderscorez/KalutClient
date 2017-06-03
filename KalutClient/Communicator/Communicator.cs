@@ -59,9 +59,14 @@ namespace Communicator
             StandartResponse rsp = await POST("/auth", data);
             return rsp.Data["Auth"].ToString() == "True";
         }
-        async private static Task<Dictionary<string, string>> GetQuizDescByUID(int uid)
+        async public static Task<Dictionary<string, string>> GetQuizDescByUID(int uid)
         {
             StandartResponse rsp = await GET(string.Format("/quizes/get_quiz_info_by_uid&{0}", uid));
+            return rsp.Data;
+        }
+        async public static Task<Dictionary<string, string>> GetQuizDataByUID(int uid)
+        {
+            StandartResponse rsp = await GET(string.Format("/quizes/get_quiz_data_by_uid&{0}", uid));
             return rsp.Data;
         }
         async public static Task<Dictionary<int, Dictionary<string, string>>> GetUserKalutsInfo(string Username, string Password)

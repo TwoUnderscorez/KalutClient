@@ -91,7 +91,7 @@ namespace KalutClient
             Environment.Exit(0x0);
         }
 
-        async private void metroTile4_Click(object sender, EventArgs e)
+        private void metroTile4_Click(object sender, EventArgs e)
         {
             PlayerViewHost player = new PlayerViewHost();
             Hide();
