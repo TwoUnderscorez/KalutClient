@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KalutClient.Objects
 {
-    class KalutQuiz
+    public class KalutQuiz
     {
         public KalutQuiz()
         { }

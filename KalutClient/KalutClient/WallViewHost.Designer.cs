@@ -33,6 +33,7 @@
             this.status_lbl = new MetroFramework.Controls.MetroLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.nextq_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // status_spn
@@ -69,11 +70,22 @@
             this.metroLabel1.TabIndex = 3;
             this.metroLabel1.Text = "Players: ";
             // 
+            // nextq_btn
+            // 
+            this.nextq_btn.Location = new System.Drawing.Point(144, 218);
+            this.nextq_btn.Name = "nextq_btn";
+            this.nextq_btn.Size = new System.Drawing.Size(75, 23);
+            this.nextq_btn.TabIndex = 4;
+            this.nextq_btn.Text = "nextq";
+            this.nextq_btn.UseVisualStyleBackColor = true;
+            this.nextq_btn.Click += new System.EventHandler(this.nextq_btn_Click);
+            // 
             // WallViewHost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Controls.Add(this.nextq_btn);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.status_lbl);
             this.Controls.Add(this.status_spn);
@@ -91,5 +103,6 @@
         private MetroFramework.Controls.MetroLabel status_lbl;
         private System.Windows.Forms.Timer timer1;
         private MetroFramework.Controls.MetroLabel metroLabel1;
+        private System.Windows.Forms.Button nextq_btn;
     }
 }

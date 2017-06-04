@@ -28,18 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.status_lbl = new MetroFramework.Controls.MetroLabel();
+            this.components = new System.ComponentModel.Container();
             this.status_spn = new MetroFramework.Controls.MetroProgressSpinner();
+            this.status_lbl = new MetroFramework.Controls.MetroTextBox();
+            this.QuestionTimeout_timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // status_lbl
-            // 
-            this.status_lbl.AutoSize = true;
-            this.status_lbl.Location = new System.Drawing.Point(45, 60);
-            this.status_lbl.Name = "status_lbl";
-            this.status_lbl.Size = new System.Drawing.Size(82, 19);
-            this.status_lbl.TabIndex = 0;
-            this.status_lbl.Text = "Please wait...";
             // 
             // status_spn
             // 
@@ -49,24 +42,44 @@
             this.status_spn.Size = new System.Drawing.Size(16, 16);
             this.status_spn.TabIndex = 1;
             // 
+            // status_lbl
+            // 
+            this.status_lbl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.status_lbl.CustomBackground = true;
+            this.status_lbl.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.status_lbl.Location = new System.Drawing.Point(45, 56);
+            this.status_lbl.Multiline = true;
+            this.status_lbl.Name = "status_lbl";
+            this.status_lbl.Size = new System.Drawing.Size(235, 182);
+            this.status_lbl.Style = MetroFramework.MetroColorStyle.White;
+            this.status_lbl.TabIndex = 2;
+            this.status_lbl.Text = "Please wait...";
+            this.status_lbl.UseStyleColors = true;
+            // 
+            // QuestionTimeout_timer
+            // 
+            this.QuestionTimeout_timer.Interval = 1000;
+            this.QuestionTimeout_timer.Tick += new System.EventHandler(this.QuestionTimeout_timer_Tick);
+            // 
             // PlayerViewHost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.status_spn);
             this.Controls.Add(this.status_lbl);
+            this.Controls.Add(this.status_spn);
             this.Name = "PlayerViewHost";
             this.Text = "Join a Kalut";
             this.Load += new System.EventHandler(this.PlayerViewHost_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroLabel status_lbl;
         private MetroFramework.Controls.MetroProgressSpinner status_spn;
+        private MetroFramework.Controls.MetroTextBox status_lbl;
+        private System.Windows.Forms.Timer QuestionTimeout_timer;
     }
 }

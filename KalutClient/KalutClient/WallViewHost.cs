@@ -24,7 +24,7 @@ namespace KalutClient
         public WallViewHost(int KalutUID)
         {
             IronPython = Python.CreateRuntime();
-            IronPythonScript = IronPython.UseFile("Connection\\conn.py");
+            IronPythonScript = IronPython.UseFile("conn.py");
             UID = KalutUID;
             InitializeComponent();
         }
@@ -77,6 +77,11 @@ namespace KalutClient
         private void timer1_Tick(object sender, EventArgs e)
         {
             metroLabel1.Text = IronPythonScript.get_list_of_players();
+        }
+
+        private void nextq_btn_Click(object sender, EventArgs e)
+        {
+            IronPythonScript.wallview_next_q();
         }
     }
 }
