@@ -77,7 +77,14 @@ namespace KalutClient
             string connected = IronPythonScript.connect("@#@WALLVIEW@#@", PIN);
             var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(connected);
             if (data["status"] == "ok")
-            {
+            if
+                { (!data.Keys.Contains("UID"))
+                {
+                    IronPythonScript.close();
+                    parent.Show();
+                    Close();
+                    return;
+                }
                 UID = int.Parse(data["UID"]);
                 await LoadQuiz();
                 status_lbl.Text = "Connected!";

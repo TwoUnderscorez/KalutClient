@@ -120,9 +120,9 @@
             // 
             // html_content_txt
             // 
-            this.html_content_txt.Location = new System.Drawing.Point(108, 177);
+            this.html_content_txt.Location = new System.Drawing.Point(88, 177);
             this.html_content_txt.Name = "html_content_txt";
-            this.html_content_txt.Size = new System.Drawing.Size(304, 23);
+            this.html_content_txt.Size = new System.Drawing.Size(324, 23);
             this.html_content_txt.Style = MetroFramework.MetroColorStyle.Blue;
             this.html_content_txt.TabIndex = 28;
             this.html_content_txt.UseStyleColors = true;
@@ -133,9 +133,9 @@
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.Location = new System.Drawing.Point(6, 178);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(96, 19);
+            this.metroLabel10.Size = new System.Drawing.Size(76, 19);
             this.metroLabel10.TabIndex = 27;
-            this.metroLabel10.Text = "HTML Content:";
+            this.metroLabel10.Text = "Image URL:";
             // 
             // metroLabel9
             // 

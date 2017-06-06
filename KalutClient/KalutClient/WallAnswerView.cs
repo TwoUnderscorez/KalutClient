@@ -52,7 +52,14 @@ namespace KalutClient
             ans1_tile.Text = q.Answers[1].Key;
             ans2_tile.Text = q.Answers[2].Key;
             ans3_tile.Text = q.Answers[3].Key;
-            webBrowser.DocumentText = q.HTMLContent;
+            string html = string.Format("<img src=\"{0}\" width=\"{1}\" height=\"{2}\">", q.HTMLContent, webBrowser.Size.Width, webBrowser.Size.Height);
+            if (html != webBrowser.DocumentText)
+            {
+                webBrowser.Navigate("about:blank");
+                webBrowser.Document.OpenNew(false);
+                webBrowser.Document.Write(html);
+                webBrowser.Refresh();
+            }
         }
 
         private void nextq_btn_Click(object sender, EventArgs e)
