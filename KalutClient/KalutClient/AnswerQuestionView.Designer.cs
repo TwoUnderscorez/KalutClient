@@ -43,10 +43,11 @@
             // 
             // ans3_tile
             // 
-            this.ans3_tile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ans3_tile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ans3_tile.Location = new System.Drawing.Point(3, 3);
             this.ans3_tile.Name = "ans3_tile";
-            this.ans3_tile.Size = new System.Drawing.Size(289, 66);
+            this.ans3_tile.Size = new System.Drawing.Size(290, 66);
+            this.ans3_tile.Style = MetroFramework.MetroColorStyle.Red;
             this.ans3_tile.TabIndex = 0;
             this.ans3_tile.Text = "metroTile1";
             this.ans3_tile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -54,10 +55,11 @@
             // 
             // ans0_tile
             // 
-            this.ans0_tile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.ans0_tile.Location = new System.Drawing.Point(301, 3);
+            this.ans0_tile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ans0_tile.Location = new System.Drawing.Point(299, 3);
             this.ans0_tile.Name = "ans0_tile";
-            this.ans0_tile.Size = new System.Drawing.Size(289, 66);
+            this.ans0_tile.Size = new System.Drawing.Size(291, 66);
+            this.ans0_tile.Style = MetroFramework.MetroColorStyle.Blue;
             this.ans0_tile.TabIndex = 1;
             this.ans0_tile.Text = "metroTile2";
             this.ans0_tile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -65,10 +67,11 @@
             // 
             // ans1_tile
             // 
-            this.ans1_tile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ans1_tile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ans1_tile.Location = new System.Drawing.Point(299, 75);
             this.ans1_tile.Name = "ans1_tile";
             this.ans1_tile.Size = new System.Drawing.Size(291, 66);
+            this.ans1_tile.Style = MetroFramework.MetroColorStyle.Green;
             this.ans1_tile.TabIndex = 3;
             this.ans1_tile.Text = "metroTile3";
             this.ans1_tile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -76,10 +79,11 @@
             // 
             // ans2_tile
             // 
-            this.ans2_tile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.ans2_tile.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ans2_tile.Location = new System.Drawing.Point(3, 75);
             this.ans2_tile.Name = "ans2_tile";
-            this.ans2_tile.Size = new System.Drawing.Size(289, 66);
+            this.ans2_tile.Size = new System.Drawing.Size(290, 66);
+            this.ans2_tile.Style = MetroFramework.MetroColorStyle.Yellow;
             this.ans2_tile.TabIndex = 2;
             this.ans2_tile.Text = "metroTile4";
             this.ans2_tile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

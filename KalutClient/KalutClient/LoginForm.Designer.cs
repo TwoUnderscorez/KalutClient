@@ -106,6 +106,7 @@
             this.register_lnk.Text = "Not a user? Register!";
             this.register_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.register_lnk.UseStyleColors = true;
+            this.register_lnk.Click += new System.EventHandler(this.register_lnk_Click);
             // 
             // fpwd_lnk
             // 

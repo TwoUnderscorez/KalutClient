@@ -36,8 +36,8 @@
             this.my_title_lbl = new MetroFramework.Controls.MetroLabel();
             this.my_kaluts_lst = new System.Windows.Forms.ListBox();
             this.editaQuiz_tab = new MetroFramework.Controls.MetroTabPage();
-            this.quiz_editor_usrctrl = new KalutClient.QuizEditor();
             this.back_btn = new MetroFramework.Controls.MetroButton();
+            this.quiz_editor_usrctrl = new KalutClient.QuizEditor();
             this.metroTabControl1.SuspendLayout();
             this.newQuiz_tab.SuspendLayout();
             this.metroPanel1.SuspendLayout();
@@ -53,7 +53,7 @@
             this.metroTabControl1.Controls.Add(this.editaQuiz_tab);
             this.metroTabControl1.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(697, 401);
             this.metroTabControl1.TabIndex = 0;
             // 
@@ -90,12 +90,13 @@
             // 
             this.edit_kalut_btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.edit_kalut_btn.Highlight = true;
-            this.edit_kalut_btn.Location = new System.Drawing.Point(4, 336);
+            this.edit_kalut_btn.Location = new System.Drawing.Point(4, 323);
             this.edit_kalut_btn.Name = "edit_kalut_btn";
             this.edit_kalut_btn.Size = new System.Drawing.Size(230, 23);
             this.edit_kalut_btn.Style = MetroFramework.MetroColorStyle.Blue;
             this.edit_kalut_btn.TabIndex = 4;
             this.edit_kalut_btn.Text = "Edit";
+            this.edit_kalut_btn.Click += new System.EventHandler(this.edit_kalut_btn_Click);
             // 
             // my_desc_lbl
             // 
@@ -139,13 +140,6 @@
             this.editaQuiz_tab.Text = "New Kalut";
             this.editaQuiz_tab.VerticalScrollbarBarColor = true;
             // 
-            // quiz_editor_usrctrl
-            // 
-            this.quiz_editor_usrctrl.Location = new System.Drawing.Point(0, 3);
-            this.quiz_editor_usrctrl.Name = "quiz_editor_usrctrl";
-            this.quiz_editor_usrctrl.Size = new System.Drawing.Size(689, 363);
-            this.quiz_editor_usrctrl.TabIndex = 2;
-            // 
             // back_btn
             // 
             this.back_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -158,6 +152,13 @@
             this.back_btn.Text = "Back";
             this.back_btn.Theme = MetroFramework.MetroThemeStyle.Light;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // quiz_editor_usrctrl
+            // 
+            this.quiz_editor_usrctrl.Location = new System.Drawing.Point(0, 3);
+            this.quiz_editor_usrctrl.Name = "quiz_editor_usrctrl";
+            this.quiz_editor_usrctrl.Size = new System.Drawing.Size(689, 363);
+            this.quiz_editor_usrctrl.TabIndex = 2;
             // 
             // QuizMakerForm
             // 

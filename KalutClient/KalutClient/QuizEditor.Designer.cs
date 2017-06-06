@@ -323,6 +323,7 @@
             this.delete_q_btn.Style = MetroFramework.MetroColorStyle.Blue;
             this.delete_q_btn.TabIndex = 19;
             this.delete_q_btn.Text = "Delete Selected Question";
+            this.delete_q_btn.Click += new System.EventHandler(this.delete_q_btn_Click);
             // 
             // add_q_btn
             // 
@@ -394,6 +395,7 @@
             // 
             // player_timeout_val
             // 
+            this.player_timeout_val.Enabled = false;
             this.player_timeout_val.Location = new System.Drawing.Point(399, 268);
             this.player_timeout_val.Name = "player_timeout_val";
             this.player_timeout_val.Size = new System.Drawing.Size(120, 20);

@@ -37,7 +37,7 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(3, 37);
+            this.metroLabel1.Location = new System.Drawing.Point(3, 0);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(104, 19);
             this.metroLabel1.TabIndex = 0;
@@ -47,7 +47,7 @@
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(3, 60);
+            this.metroLabel2.Location = new System.Drawing.Point(3, 23);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(66, 19);
             this.metroLabel2.TabIndex = 1;
@@ -56,7 +56,7 @@
             // correct_lbl
             // 
             this.correct_lbl.AutoSize = true;
-            this.correct_lbl.Location = new System.Drawing.Point(105, 37);
+            this.correct_lbl.Location = new System.Drawing.Point(105, 0);
             this.correct_lbl.Name = "correct_lbl";
             this.correct_lbl.Size = new System.Drawing.Size(30, 19);
             this.correct_lbl.Style = MetroFramework.MetroColorStyle.Black;
@@ -67,7 +67,7 @@
             // points_lbl
             // 
             this.points_lbl.AutoSize = true;
-            this.points_lbl.Location = new System.Drawing.Point(64, 60);
+            this.points_lbl.Location = new System.Drawing.Point(64, 23);
             this.points_lbl.Name = "points_lbl";
             this.points_lbl.Size = new System.Drawing.Size(55, 19);
             this.points_lbl.Style = MetroFramework.MetroColorStyle.Blue;

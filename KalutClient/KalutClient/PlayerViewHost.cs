@@ -29,9 +29,12 @@ namespace KalutClient
         dynamic IronPythonScript;
         private int SelectedAnswer = -1;
         private int SelectedAnswerTime = -1;
-        public PlayerViewHost()
+        private bool GameStarted = false;
+        WelcomeScreen parent;
+        public PlayerViewHost(WelcomeScreen parent)
         {
             InitializeComponent();
+            this.parent = parent;
             joinview = new JoinKalutView(this);
             QuestionView = new AnswerQuestionView(this);
             AnsweredView = new AnsweredView(this);
@@ -68,11 +71,13 @@ namespace KalutClient
             {
                 Text = "Kalut Game";
                 status_lbl.Text = "Connected! Please wait for the host to start the game...";
+                GameStarted = true;
                 UID = int.Parse(data["UID"]);
                 await LoadQuiz();
                 var worker = WaitForServerResponse();
                 await worker.ContinueWith(t =>
                  {
+                     if (!t.Result.Keys.Contains("ShowQ")) { IronPythonScript.close(); parent.Show(); Close(); }
                      DisplayQuestion(int.Parse(t.Result["ShowQ"]));
                      status_lbl.Text = "Please wait...";
                  }, TaskScheduler.FromCurrentSynchronizationContext());
@@ -126,16 +131,16 @@ namespace KalutClient
         }
         private void DisplayQuestion(int index)
         {
+            QuestionView.timeout_spn.Style = MetroFramework.MetroColorStyle.Blue;
             QuestionView.Show();
             QuestionView.BringToFront();
             QuestionView.Update(QuizData[index]);
             QuestionTimeout_timer.Start();
             QuestionView.Dock = DockStyle.Fill;
-            Text = string.Format("Question {0}", index + 1);
+            Console.WriteLine(index + 1);
         }
         public void Answer(int ans)
         {
-            Console.WriteLine(string.Format("Answer({0})", ans));
             QuestionView.Hide();
             SelectedAnswer = ans;
             SelectedAnswerTime = (int)IronPythonScript.get_time();
@@ -145,17 +150,40 @@ namespace KalutClient
             QuestionTimeout_timer.Stop();
             Dictionary<string, string> data = JsonConvert.DeserializeObject<Dictionary<string, string>>(
                 IronPythonScript.answer(SelectedAnswer, SelectedAnswerTime));
+            if(data.Keys.Contains("status"))
+                if (data["status"]=="socket closed")
+                {
+                    QuestionTimeout_timer.Stop();
+                    MessageBox.Show("Game ended.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                    return;
+                }
             AnsweredView.Show();
             AnsweredView.Update(data["Points"], bool.Parse(data["Correct"]));
             AnsweredView.BringToFront();
+            Text = "Results";
             var worker = WaitForServerResponse();
             await worker.ContinueWith(t =>
             {
                 AnsweredView.Hide();
                 if (t.Result["status"] == "eog")
                 {
-
-                    Environment.Exit(0x0);
+                    string winner="";
+                    if (t.Result.Keys.Contains("winner"))
+                        winner += t.Result["winner"];
+                    QuestionTimeout_timer.Stop();
+                    IronPythonScript.close();
+                    MessageBox.Show("Game ended. " + winner, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                    return;
+                    
+                }
+                else if (t.Result["status"]=="socket closed")
+                {
+                    QuestionTimeout_timer.Stop();
+                    MessageBox.Show("Game ended.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                    return;
                 }
                 DisplayQuestion(int.Parse(t.Result["ShowQ"]));
                 status_lbl.Text = "Please wait...";
@@ -164,13 +192,30 @@ namespace KalutClient
         private void QuestionTimeout_timer_Tick(object sender, EventArgs e)
         {
             --QuestionView.timeout_spn.Value;
+            if (QuestionView.timeout_spn.Value < 6)
+                QuestionView.timeout_spn.Style = MetroFramework.MetroColorStyle.Red;
             QuestionView.timeout_txt.Text = (int.Parse(QuestionView.timeout_txt.Text) - 1).ToString();
             if(QuestionView.timeout_spn.Value == 0)
             {
                 if (SelectedAnswer == -1)
-                    Answer(-1);
+                    Answer(SelectedAnswer);
                 SendAnswer();
             }
+        }
+
+        private void PlayerViewHost_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (GameStarted)
+            {
+                QuestionTimeout_timer.Stop();
+                IronPythonScript.close();
+            }
+            parent.Show();
+        }
+
+        private void status_lbl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,3 +35,11 @@ C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutC
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.csproj.GenerateResource.Cache
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.exe
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.pdb
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\KalutClient.exe.manifest
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\bin\Debug\KalutClient.application
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.exe.manifest
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.application
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.QuizEditorHost.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.Register.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.WaitForPlayersView.resources
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\KalutClient\obj\Debug\KalutClient.WallAnswerView.resources

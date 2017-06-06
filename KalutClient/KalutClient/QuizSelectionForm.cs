@@ -37,7 +37,7 @@ namespace KalutClient
                 w.Close();
                 foreach (int uid in t.Result.Keys)
                 {
-                    myfav_kaluts_lst.Items.Add(new KalutInfo(uid, t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString()));
+                    myfav_kaluts_lst.Items.Add(new KalutInfo(uid.ToString(), t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString(), t.Result[uid]["Timeout"]));
                 }
             },
             TaskScheduler.FromCurrentSynchronizationContext());
@@ -51,7 +51,7 @@ namespace KalutClient
                 w.Close();
                 foreach (int uid in t.Result.Keys)
                 {
-                    all_kaluts_lst.Items.Add(new KalutInfo(uid, t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString()));
+                    all_kaluts_lst.Items.Add(new KalutInfo(uid.ToString(), t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString(), t.Result[uid]["Timeout"]));
                 }
             },
             TaskScheduler.FromCurrentSynchronizationContext());
@@ -66,7 +66,7 @@ namespace KalutClient
                 w.Close();
                 foreach (int uid in t.Result.Keys)
                 {
-                    my_kaluts_lst.Items.Add(new KalutInfo(uid, t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString()));
+                    my_kaluts_lst.Items.Add(new KalutInfo(uid.ToString(), t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString(), t.Result[uid]["Timeout"]));
                 }
             },
             TaskScheduler.FromCurrentSynchronizationContext());
@@ -126,10 +126,14 @@ namespace KalutClient
 
         private void my_start_kalut_btn_Click(object sender, EventArgs e)
         {
-            int uid = ((KalutInfo)my_kaluts_lst.SelectedItem).UID;
-            WallViewHost wallview = new WallViewHost(uid);
-            Hide();
-            wallview.Show();
+            try
+            {
+                int uid = int.Parse(((KalutInfo)my_kaluts_lst.SelectedItem).UID);
+                WallViewHost wallview = new WallViewHost(uid, parent);
+                Hide();
+                wallview.Show();
+            }
+            catch { }
         }
 
         private void metroPanel2_Paint(object sender, PaintEventArgs e)
@@ -139,18 +143,26 @@ namespace KalutClient
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            int uid = ((KalutInfo)all_kaluts_lst.SelectedItem).UID;
-            WallViewHost wallview = new WallViewHost(uid);
-            Hide();
-            wallview.Show();
+            try
+            {
+                int uid = int.Parse(((KalutInfo)all_kaluts_lst.SelectedItem).UID);
+                WallViewHost wallview = new WallViewHost(uid, parent);
+                Hide();
+                wallview.Show();
+            }
+            catch { }
         }
 
         private void metroButton2_Click(object sender, EventArgs e)
         {
-            int uid = ((KalutInfo)myfav_kaluts_lst.SelectedItem).UID;
-            WallViewHost wallview = new WallViewHost(uid);
-            Hide();
-            wallview.Show();
+            try
+            {
+                int uid = int.Parse(((KalutInfo)myfav_kaluts_lst.SelectedItem).UID);
+                WallViewHost wallview = new WallViewHost(uid, parent);
+                Hide();
+                wallview.Show();
+            }
+            catch { }
         }
     }
 }

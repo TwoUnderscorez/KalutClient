@@ -62,5 +62,11 @@ namespace KalutClient
             TaskScheduler.FromCurrentSynchronizationContext());
             w.ShowDialog();
         }
+
+        private void register_lnk_Click(object sender, EventArgs e)
+        {
+            Register reg = new Register();
+            reg.ShowDialog();
+        }
     }
 }

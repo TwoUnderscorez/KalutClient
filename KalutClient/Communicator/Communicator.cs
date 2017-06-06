@@ -13,7 +13,7 @@ namespace Communicator
 {
     public class Communicator
     {
-        const string BASE_URI = "https://planq.tk:25565";
+        const string BASE_URI = "https://kalut.ml:50001";
         async public static Task<StandartResponse> GET(string uri)
         {
             string myContent;
@@ -58,6 +58,14 @@ namespace Communicator
             data.Add("Password", Password);
             StandartResponse rsp = await POST("/auth", data);
             return rsp.Data["Auth"].ToString() == "True";
+        }
+        async public static Task<string> Register(string Username, string Password)
+        {
+            var data = new Dictionary<string, string>();
+            data.Add("Username", Username);
+            data.Add("Password", Password);
+            StandartResponse rsp = await POST("/register", data);
+            return rsp.Data["Registered"].ToString();
         }
         async public static Task<Dictionary<string, string>> GetQuizDescByUID(int uid)
         {
@@ -113,6 +121,17 @@ namespace Communicator
             data.Add("QuizData", Quetions);
             data.Add("QuizDescription", Info);
             StandartResponse rsp = await POST("/quizes/add", data);
+            return rsp;
+        }
+        async public static Task<StandartResponse> SaveKalut(string Username, string Password, string Info, string Quetions)
+        {
+            Console.WriteLine(Info);
+            var data = new Dictionary<string, string>();
+            data.Add("Username", Username);
+            data.Add("Password", Password);
+            data.Add("QuizData", Quetions);
+            data.Add("QuizDescription", Info);
+            StandartResponse rsp = await POST("/quizes/save", data);
             return rsp;
         }
         async public static Task<Dictionary<string, string>> CreateRoom(int uid)

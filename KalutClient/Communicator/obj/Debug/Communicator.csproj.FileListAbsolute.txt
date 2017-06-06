@@ -4,3 +4,4 @@ C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\Communicator\bin\Debug\Newto
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\Communicator\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\Communicator\obj\Debug\Communicator.dll
 C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\Communicator\obj\Debug\Communicator.pdb
+C:\Users\ronyu\Source\Repos\KalutClient\KalutClient\Communicator\obj\Debug\Communicator.csprojResolveAssemblyReference.cache

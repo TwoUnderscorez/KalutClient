@@ -93,7 +93,7 @@ namespace KalutClient
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            PlayerViewHost player = new PlayerViewHost();
+            PlayerViewHost player = new PlayerViewHost(this);
             Hide();
             player.Show();
         }
@@ -113,7 +113,7 @@ namespace KalutClient
                 UseWaitCursor = false;
                 if (t.IsCanceled || t.IsFaulted)
                 {
-                    srv_sts_lnk.Text = "Seems like our server are down... :(";
+                    srv_sts_lnk.Text = "Seems like our server is down... :(";
                     srv_sts_lnk.Style = MetroFramework.MetroColorStyle.Red;
                 }
                 else if (t.Result.Data["Service Status"].ToString() == "OK")
@@ -123,7 +123,7 @@ namespace KalutClient
                 }
                 else
                 {
-                    srv_sts_lnk.Text = "Seems like our server are down... :(";
+                    srv_sts_lnk.Text = "Seems like our server is down... :(";
                     srv_sts_lnk.Style = MetroFramework.MetroColorStyle.Red;
                 }
             },

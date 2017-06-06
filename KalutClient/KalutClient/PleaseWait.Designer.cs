@@ -38,9 +38,10 @@
             this.metroProgressSpinner1.Maximum = 100;
             this.metroProgressSpinner1.Name = "metroProgressSpinner1";
             this.metroProgressSpinner1.Size = new System.Drawing.Size(25, 22);
-            this.metroProgressSpinner1.Speed = 2F;
+            this.metroProgressSpinner1.Speed = 5F;
             this.metroProgressSpinner1.TabIndex = 0;
             this.metroProgressSpinner1.UseWaitCursor = true;
+            this.metroProgressSpinner1.Value = 10;
             // 
             // metroTextBox1
             // 

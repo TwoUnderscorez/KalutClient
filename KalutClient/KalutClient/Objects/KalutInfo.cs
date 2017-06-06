@@ -8,14 +8,16 @@ namespace KalutClient.Objects
 {
     public class KalutInfo
     {
-        public int UID { get; set; }
+        public string UID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public KalutInfo(int uid,string name, string desc)
+        public string Timeout { get; set; }
+        public KalutInfo(string uid,string name, string desc, string timeout)
         {
             UID = uid;
             Name = name;
             Description = desc;
+            Timeout = timeout;
         }
         public override string ToString()
         {

@@ -31,10 +31,10 @@ namespace KalutClient
             var worker = Communicator.Communicator.GetUserKalutsInfo(Properties.Settings.Default.Username,
                 Properties.Settings.Default.Password);
             worker.ContinueWith(t => {
-                w.Close();
+                w.Close(); 
                 foreach (int uid in t.Result.Keys)
                 {
-                    my_kaluts_lst.Items.Add(new KalutInfo(uid, t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString()));
+                    my_kaluts_lst.Items.Add(new KalutInfo(uid.ToString(), t.Result[uid]["Name"].ToString(), t.Result[uid]["Description"].ToString(), t.Result[uid]["Timeout"]));
                 }
             },
             TaskScheduler.FromCurrentSynchronizationContext());
@@ -84,6 +84,16 @@ namespace KalutClient
         private void metroButton3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void edit_kalut_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                QuizEditorHost editor = new QuizEditorHost(int.Parse(((KalutInfo)my_kaluts_lst.SelectedItem).UID));
+                editor.ShowDialog();
+            }
+            catch { }
         }
     }
 }

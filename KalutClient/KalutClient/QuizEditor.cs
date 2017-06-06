@@ -18,9 +18,20 @@ namespace KalutClient
 {
     public partial class QuizEditor : MetroUserControl
     {
+        private bool new_quiz;
+        private int uid;
+        QuizEditorHost parent;
         public QuizEditor()
         {
             InitializeComponent();
+            new_quiz = true;
+        }
+        public QuizEditor(bool new_quiz, int uid, QuizEditorHost parent)
+        {
+            InitializeComponent();
+            this.new_quiz = new_quiz;
+            this.parent = parent;
+            this.uid = uid;
         }
         private void EnableQuizMaker(bool e)
         {
@@ -95,16 +106,15 @@ namespace KalutClient
             q_time_adjust.Enabled = e;
             q_gpbox.Enabled = e;
             question_txt.Enabled = e;
-        }
+        }  
         private void QuizEditor_Load(object sender, EventArgs e)
         {
-
             ResetQuestion();
             ResetQuizMaker();
             EnableQuestion(false);
             EnableQuizMaker(true);
         }
-
+        #region event handlers
         private void question_txt_TextChanged(object sender, EventArgs e)
         {
             try
@@ -226,46 +236,6 @@ namespace KalutClient
             catch { }
         }
 
-        private void save_quiz_btn_Click(object sender, EventArgs e)
-        {
-            PleaseWait w = new PleaseWait("Uploading quiz...");
-            List<KalutQuestion> qs = new List<KalutQuestion>();
-            for (int i = 0; i < qs_lstbox.Items.Count; i++)
-                qs.Add((KalutQuestion)qs_lstbox.Items[i]);
-            KalutInfo info = new KalutInfo(-1, quiz_name_txt.Text, quiz_desc_txt.Text);
-            KalutQuiz quiz = new KalutQuiz(info, qs);
-            var worker = Communicator.Communicator.AddKalut(
-                Properties.Settings.Default.Username,
-                Properties.Settings.Default.Password,
-                JsonConvert.SerializeObject(info),
-                JsonConvert.SerializeObject(qs));
-            worker.ContinueWith(t =>
-            {
-                w.Close();
-                if(t.IsCanceled || t.IsFaulted)
-                {
-                    MessageBox.Show("Unexpected error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    StandartResponse rsp = t.Result;
-                    if (rsp.Status == "OK")
-                    {
-                        MessageBox.Show("Uploaded successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ResetQuizMaker();
-                        ResetQuestion();
-                        EnableQuestion(false); 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error: " + rsp.ErrMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            },
-            TaskScheduler.FromCurrentSynchronizationContext());
-            w.ShowDialog();
-        }
-
         private void html_content_txt_TextChanged(object sender, EventArgs e)
         {
             try
@@ -278,14 +248,120 @@ namespace KalutClient
         private void player_timeout_chkbox_CheckedChanged(object sender, EventArgs e)
         {
             player_timeout_val.Enabled = player_timeout_chkbox.Checked;
+            if (player_timeout_chkbox.Checked)
+                player_timeout_val.Value = 30;
+            else
+                player_timeout_val.Value = 0;
         }
-
+        #endregion
+        public void LoadQuizData()
+        {
+            quiz_name_txt.Enabled = false;
+            quiz_desc_txt.Enabled = false;
+            del_quiiz_btn.Enabled = false;
+            PleaseWait w = new PleaseWait("Loading quiz...");
+            KalutQuestion[] qs;
+            var worker = Communicator.Communicator.GetQuizDataByUID(uid);
+            worker.ContinueWith(t =>
+            {
+                qs = JsonConvert.DeserializeObject<KalutQuestion[]>(t.Result["Quiz"]);
+                foreach (KalutQuestion item in qs)
+                    qs_lstbox.Items.Add(item);
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+            worker = Communicator.Communicator.GetQuizDescByUID(uid);
+            worker.ContinueWith(t =>
+            {
+                player_timeout_val.Value = int.Parse(t.Result["Timeout"]);
+                if (player_timeout_val.Value == 0)
+                    player_timeout_chkbox.Checked = false;
+                else
+                    player_timeout_chkbox.Checked = true;
+                quiz_desc_txt.Text = t.Result["Description"];
+                quiz_name_txt.Text = t.Result["Name"];
+                w.Close();
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+            w.ShowDialog();
+        }
+        private void save_quiz_btn_Click(object sender, EventArgs e)
+        {
+            PleaseWait w = new PleaseWait("Uploading quiz...");
+            List<KalutQuestion> qs = new List<KalutQuestion>();
+            for (int i = 0; i < qs_lstbox.Items.Count; i++)
+                qs.Add((KalutQuestion)qs_lstbox.Items[i]);
+            if (uid == 0)
+                uid = -1;
+            KalutInfo info = new KalutInfo(uid.ToString(), quiz_name_txt.Text, quiz_desc_txt.Text, ((int)player_timeout_val.Value).ToString());
+            KalutQuiz quiz = new KalutQuiz(info, qs);
+            if (new_quiz)
+            {
+                var worker = Communicator.Communicator.AddKalut(
+                    Properties.Settings.Default.Username,
+                    Properties.Settings.Default.Password,
+                    JsonConvert.SerializeObject(info),
+                    JsonConvert.SerializeObject(qs));
+                worker.ContinueWith(t =>
+                {
+                    w.Close();
+                    if (t.IsCanceled || t.IsFaulted)
+                    {
+                        MessageBox.Show("Unexpected error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        StandartResponse rsp = t.Result;
+                        if (rsp.Status == "OK")
+                        {
+                            MessageBox.Show("Uploaded successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ResetQuizMaker();
+                            ResetQuestion();
+                            EnableQuestion(false);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error: " + rsp.ErrMsg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                },
+                TaskScheduler.FromCurrentSynchronizationContext());
+            }
+            else
+            {
+                var worker = Communicator.Communicator.SaveKalut(
+                    Properties.Settings.Default.Username,
+                    Properties.Settings.Default.Password,
+                    JsonConvert.SerializeObject(info),
+                    JsonConvert.SerializeObject(qs));
+                worker.ContinueWith(t =>
+                {
+                    w.Close();
+                    if (t.IsFaulted || t.IsCanceled)
+                    {
+                        MessageBox.Show("Unexpected error.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Saved!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        parent.Close();
+                    }
+                }, TaskScheduler.FromCurrentSynchronizationContext());
+            }
+            w.ShowDialog();
+        }
         private void del_quiiz_btn_Click(object sender, EventArgs e)
         {
             ResetQuestion();
             ResetQuizMaker();
             EnableQuestion(false);
             EnableQuizMaker(true);
+        }
+
+        private void delete_q_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                qs_lstbox.Items.Remove(qs_lstbox.SelectedItem);
+            }
+            catch { }
         }
     }
 }

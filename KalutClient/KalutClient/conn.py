@@ -3,7 +3,7 @@ import json
 import time
 
 mysoc = socket.socket()
-HOST='localhost'
+HOST='kalut.ml'
 PORT=50000
 BUFSIZ=1024
 ADDR=(HOST, PORT)
@@ -49,9 +49,17 @@ def wallview_next_q():
     
 def send_and_ret_data(data):
     global mysoc
-    mysoc.send(json.dumps(data))
-    data = mysoc.recv(1024)
-    return data
+    recved_data = None
+    try:
+        mysoc.send(json.dumps(data))
+        recved_data = mysoc.recv(1024)
+    except:
+        data = json.dumps({'status' : 'socket closed'})
+        mysoc.close()
+    if recved_data:
+        return recved_data
+    else:
+        return json.dumps({'status' : 'socket closed'})
 
 def close():
     global mysoc

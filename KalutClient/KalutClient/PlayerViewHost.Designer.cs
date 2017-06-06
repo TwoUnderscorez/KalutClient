@@ -40,7 +40,9 @@
             this.status_spn.Maximum = 100;
             this.status_spn.Name = "status_spn";
             this.status_spn.Size = new System.Drawing.Size(16, 16);
+            this.status_spn.Speed = 5F;
             this.status_spn.TabIndex = 1;
+            this.status_spn.Value = 10;
             // 
             // status_lbl
             // 
@@ -57,6 +59,7 @@
             this.status_lbl.TabIndex = 2;
             this.status_lbl.Text = "Please wait...";
             this.status_lbl.UseStyleColors = true;
+            this.status_lbl.Click += new System.EventHandler(this.status_lbl_Click);
             // 
             // QuestionTimeout_timer
             // 
@@ -72,6 +75,7 @@
             this.Controls.Add(this.status_spn);
             this.Name = "PlayerViewHost";
             this.Text = "Join a Kalut";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayerViewHost_FormClosing);
             this.Load += new System.EventHandler(this.PlayerViewHost_Load);
             this.ResumeLayout(false);
 

@@ -36,6 +36,7 @@ namespace KalutClient
             timeout_spn.Maximum = q.Time;
             timeout_spn.Value = q.Time;
             timeout_txt.Text = q.Time.ToString();
+
         }
 
         private void ans0_tile_Click(object sender, EventArgs e)
