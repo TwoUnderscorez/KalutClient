@@ -45,7 +45,7 @@
             this.login_btn.Name = "login_btn";
             this.login_btn.Size = new System.Drawing.Size(171, 23);
             this.login_btn.Style = MetroFramework.MetroColorStyle.Blue;
-            this.login_btn.TabIndex = 0;
+            this.login_btn.TabIndex = 3;
             this.login_btn.Text = "Log in";
             this.login_btn.Click += new System.EventHandler(this.login_btn_Click);
             // 
@@ -54,7 +54,7 @@
             this.close_btn.Location = new System.Drawing.Point(200, 209);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(42, 23);
-            this.close_btn.TabIndex = 1;
+            this.close_btn.TabIndex = 4;
             this.close_btn.Text = "Close";
             this.close_btn.Click += new System.EventHandler(this.close_btn_Click);
             // 
@@ -73,7 +73,7 @@
             this.usr_txt.Name = "usr_txt";
             this.usr_txt.Size = new System.Drawing.Size(219, 23);
             this.usr_txt.Style = MetroFramework.MetroColorStyle.Blue;
-            this.usr_txt.TabIndex = 3;
+            this.usr_txt.TabIndex = 1;
             this.usr_txt.UseStyleColors = true;
             // 
             // pwd_txt
@@ -83,7 +83,7 @@
             this.pwd_txt.PasswordChar = '●';
             this.pwd_txt.Size = new System.Drawing.Size(219, 23);
             this.pwd_txt.Style = MetroFramework.MetroColorStyle.Blue;
-            this.pwd_txt.TabIndex = 5;
+            this.pwd_txt.TabIndex = 2;
             this.pwd_txt.UseStyleColors = true;
             this.pwd_txt.UseSystemPasswordChar = true;
             // 
@@ -103,6 +103,7 @@
             this.register_lnk.Size = new System.Drawing.Size(223, 16);
             this.register_lnk.Style = MetroFramework.MetroColorStyle.Blue;
             this.register_lnk.TabIndex = 6;
+            this.register_lnk.TabStop = false;
             this.register_lnk.Text = "Not a user? Register!";
             this.register_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.register_lnk.UseStyleColors = true;
@@ -115,6 +116,7 @@
             this.fpwd_lnk.Size = new System.Drawing.Size(223, 16);
             this.fpwd_lnk.Style = MetroFramework.MetroColorStyle.Blue;
             this.fpwd_lnk.TabIndex = 7;
+            this.fpwd_lnk.TabStop = false;
             this.fpwd_lnk.Text = "Forgot your password?";
             this.fpwd_lnk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.fpwd_lnk.UseStyleColors = true;

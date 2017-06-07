@@ -163,6 +163,7 @@ namespace KalutClient
             GameStarted = true;
             waitView.Hide();
             Controls.Add(ansView);
+            ansView.BringToFront();
             NextButtonClick();
         }
         internal void NextButtonClick()
